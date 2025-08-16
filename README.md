@@ -1,6 +1,14 @@
 # ETHGlobal_2025
 High value event payments lock up thousands of dollars for months across multiple vendors without a neutral automated way to enforce terms, causing budget drift, cash-flow pain, surprise costs, and messy disputes.
 
+**Fair Hold** is an on-chain smart escrow that handles deposits with clear milestones and refund rules. With a MultiSig (multi-signature) digital wallet, we offer a neutral and trustless option for payees so they can have a peace in mind with their high-ticket transactions. In addition to the security of the funds, we enable these funds to earn a yield as there is often a lag time between the payment/deposit and the actual execution of the service.
+
+# Use Cases (B2B2C)
+- (B2C) Large event such as a Wedding and ETH Global Hackathon
+- (B2C) Securing housing
+- (B2B or B2C) Custom made to order goods or services
+- (B2B) Contract or subcontract works 
+
 ```mermaid
 graph TB
     %% Governance Layer
