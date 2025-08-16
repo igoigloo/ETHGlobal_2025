@@ -13,23 +13,11 @@ FairHold is a transparent, milestone-based escrow system built on blockchain tec
 - **Change order support** - Vendor can request changes with payer approval
 - **Auto-refund triggers** - Automatic refunds for rental deposits
 
-### Preset Templates
-- **Wedding Services** - 40% deposit, 20% samples, 40% completion
-- **Rental Deposits** - 100% security deposit with auto-refund
-
-### Web Application
-- **Beautiful UI** - Modern, responsive design with no crypto jargon
-- **Step-by-step creation** - Guided agreement setup process
-- **Real-time tracking** - Monitor agreement progress and milestones
-- **QR codes & magic links** - Easy sharing and access
-
-
 ## Use Cases (B2B2C)
 - (B2C) Large event such as a Wedding and ETH Global Hackathon
 - (B2C) Securing housing
 - (B2B or B2C) Custom made to order goods or services
 - (B2B) Contract or subcontract works 
-
 
 
 ```mermaid
