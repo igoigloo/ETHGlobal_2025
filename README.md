@@ -1,7 +1,26 @@
-# ETHGlobal_2025
+# ETHGlobal New York 2025
 High value event payments lock up thousands of dollars for months across multiple vendors without a neutral automated way to enforce terms, causing budget drift, cash-flow pain, surprise costs, and messy disputes.
 
-```
+# FairHold - Secure On-Chain Smart Escrow
+FairHold is a transparent, milestone-based escrow system built on blockchain technology. With a MultiSig (multi-signature) digital wallet, it provides neutral, trustless, and secure payment solutions for high-ticket transactions and deposits with automatic refund policies and dispute resolution, so customers can have a peace in mind. In addition to the security of the funds, we enable these funds to earn a yield as there is often a lag time between the payment/deposit and the actual execution of the service.
+
+## 🎯 Features
+
+### Smart Contract Features
+- **Milestone-based payments** - Release funds only when satisfied
+- **Automatic refund policies** - Time-based cancellation windows
+- **Dispute resolution** - Built-in mediation system
+- **Change order support** - Vendor can request changes with payer approval
+- **Auto-refund triggers** - Automatic refunds for rental deposits
+
+## Use Cases (B2B2C)
+- (B2C) Large event such as a Wedding and ETH Global Hackathon
+- (B2C) Securing housing
+- (B2B or B2C) Custom made to order goods or services
+- (B2B) Contract or subcontract works 
+
+
+```mermaid
 graph TB
     %% Governance Layer
     subgraph "Governance & Upgrade Layer"
