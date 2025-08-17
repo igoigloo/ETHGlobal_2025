@@ -3,7 +3,7 @@ You can install the Dynamic SDK in 3 quick steps!
 
 Install the Dynamic SDK
 
-yarn add viem @dynamic-labs/sdk-react-core @dynamic-labs/ethereum
+yarn add viem @dynamic-labs/wagmi-connector wagmi @tanstack/react-query @dynamic-labs/sdk-react-core @dynamic-labs/ethereum
 
 Copy the snippet into your project
 
