@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: process.env.NEXT_PUBLIC_IGNORE_BUILD_ERROR === "true",
   },
   webpack: config => {
+    // Essential fallbacks for Node.js modules that don't work in browser environment
     config.resolve.fallback = { 
       fs: false, 
       net: false, 
@@ -27,6 +28,7 @@ const nextConfig: NextConfig = {
       buffer: false
     };
     
+    // Exclude problematic Node.js-only modules from browser bundle
     config.externals.push("pino-pretty", "pino", "lokijs", "encoding");
     
     // Handle pino and native modules for browser environment
@@ -39,7 +41,7 @@ const nextConfig: NextConfig = {
       'utf-8-validate': false
     };
     
-    // Ignore native module warnings
+    // Suppress non-critical warnings for native modules
     config.ignoreWarnings = [
       { module: /node_modules\/bufferutil/ },
       { module: /node_modules\/utf-8-validate/ },

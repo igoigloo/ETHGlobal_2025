@@ -16187,8 +16187,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
+    "@types/qrcode": ^1.5.5
     husky: ^9.1.6
     lint-staged: ^15.2.10
+    qrcode: ^1.5.4
   languageName: unknown
   linkType: soft
 

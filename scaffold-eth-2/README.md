@@ -29,6 +29,25 @@ Before you begin, you need to install the following tools:
 
 To get started with Scaffold-ETH 2, follow the steps below:
 
+### Option 1: Automated Setup (Recommended)
+
+Run the setup script for your operating system:
+
+**Linux/macOS:**
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+**Windows:**
+```batch
+setup.bat
+```
+
+Then follow the on-screen instructions to start the blockchain, deploy contracts, and run the frontend.
+
+### Option 2: Manual Setup
+
 1. Install the latest version of Scaffold-ETH 2
 
 ```
@@ -64,6 +83,9 @@ yarn start
 
 Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
 
+> [!TIP]
+> If you encounter any build errors during setup, check the [Troubleshooting](#troubleshooting) section below for common issues and solutions.
+
 **What's next**:
 
 Visit the [What's next section of our docs](https://docs.scaffoldeth.io/quick-start/environment#whats-next) to learn how to:
@@ -80,6 +102,116 @@ Visit the [What's next section of our docs](https://docs.scaffoldeth.io/quick-st
 Visit our [docs](https://docs.scaffoldeth.io) to learn all the technical details and guides of Scaffold-ETH 2.
 
 To know more about its features, check out our [website](https://scaffoldeth.io).
+
+> [!NOTE]
+> For detailed troubleshooting information and advanced solutions, see [TROUBLESHOOTING.md](./TROUBLESHOOTING.md).
+
+## Troubleshooting
+
+### Common Build Errors and Solutions
+
+#### 1. "Module not found: Can't resolve 'pino'" Error
+
+**Problem**: You may encounter a build error related to the `pino` logging module not being found.
+
+**Solution**: This is caused by `pino` being a Node.js-only logging library that's not compatible with browser environments. The webpack configuration has been updated to handle this.
+
+If you still encounter this error:
+1. Ensure your `next.config.ts` includes the proper webpack configuration with `pino` externals
+2. Clear your Next.js cache: `Remove-Item .next -Recurse -Force` (PowerShell) or `rm -rf .next` (bash)
+3. Restart the development server
+
+> [!NOTE]
+> See [next.config.example.ts](./next.config.example.ts) for the complete webpack configuration that resolves these issues.
+
+#### 2. "Module not found: Can't resolve 'qrcode'" Error
+
+**Problem**: The `@reown/appkit-ui` package may fail to find the `qrcode` module.
+
+**Solution**: Install the missing `qrcode` dependency:
+```bash
+# From the project root
+yarn add qrcode @types/qrcode
+
+# Or specifically in the nextjs package
+cd packages/nextjs
+yarn add qrcode @types/qrcode
+```
+
+#### 3. "bufferutil" and "utf-8-validate" Warnings
+
+**Problem**: You may see warnings about `bufferutil` and `utf-8-validate` modules not being found.
+
+**Solution**: These are optional native WebSocket optimization modules. The warnings are non-critical and can be safely ignored as they fall back to JavaScript implementations. The webpack configuration suppresses these warnings.
+
+#### 4. Build Cache Issues
+
+**Problem**: Sometimes cached build files can cause compilation issues.
+
+**Solution**: Clear the Next.js cache and restart:
+```bash
+# Windows PowerShell
+Remove-Item .next -Recurse -Force -ErrorAction SilentlyContinue
+
+# Linux/macOS
+rm -rf .next
+
+# Then restart the development server
+yarn start
+```
+
+### Enhanced Setup Instructions
+
+For a smooth setup experience, follow these steps after cloning:
+
+1. **Install dependencies**:
+   ```bash
+   yarn install
+   ```
+
+2. **Generate burner wallet**:
+   ```bash
+   yarn generate
+   ```
+
+3. **Start local blockchain** (Terminal 1):
+   ```bash
+   yarn chain
+   ```
+
+4. **Deploy contracts** (Terminal 2):
+   ```bash
+   yarn deploy
+   ```
+
+5. **Start frontend** (Terminal 3):
+   ```bash
+   yarn start
+   ```
+
+### Setup Verification
+
+After completing the setup, verify everything is working:
+
+1. **Check blockchain**: Visit `http://localhost:8545` - you should see a JSON-RPC endpoint
+2. **Check frontend**: Visit `http://localhost:3000` - you should see the Scaffold-ETH 2 interface
+3. **Check contract deployment**: Look for contract addresses in the deploy terminal output
+4. **Test wallet connection**: Try connecting a wallet on the frontend
+5. **Test contract interaction**: Use the "Debug Contracts" tab to interact with deployed contracts
+
+If any step fails, refer to the troubleshooting sections below.
+
+If you encounter any module resolution errors, try clearing the cache and restarting:
+```bash
+# Clear Next.js cache
+cd packages/nextjs
+Remove-Item .next -Recurse -Force -ErrorAction SilentlyContinue  # Windows
+# rm -rf .next  # Linux/macOS
+
+# Return to project root and restart
+cd ../..
+yarn start
+```
 
 ## Contributing to Scaffold-ETH 2
 
