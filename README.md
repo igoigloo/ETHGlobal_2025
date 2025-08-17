@@ -1,4 +1,6 @@
 # ETHGlobal New York 2025
+ - Flow Testnet Contract Addr: 0xfe50b0b3b0e7e77bac7f2ff6dfbafef9a11f2699 
+
 High value event payments lock up thousands of dollars for months across multiple vendors without a neutral automated way to enforce terms, causing budget drift, cash-flow pain, surprise costs, and messy disputes.
 
 # FairHold - Secure On-Chain Smart Escrow
